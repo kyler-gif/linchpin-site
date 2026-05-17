@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Linchpin Systems - AI Automation for HVAC</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#f5f3f4",
+                      "on-error": "#ffffff",
+                      "surface-warm": "#F9F9F7",
+                      "outline-variant": "#c4c6cd",
+                      "outline": "#74777d",
+                      "background": "#fbf9fa",
+                      "secondary": "#855300",
+                      "surface": "#fbf9fa",
+                      "inverse-on-surface": "#f2f0f2",
+                      "secondary-container": "#fea619",
+                      "primary-fixed-dim": "#b7c8de",
+                      "on-secondary-fixed": "#2a1700",
+                      "navy-muted": "#2C3E50",
+                      "on-error-container": "#93000a",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "surface-container": "#efedef",
+                      "surface-tint": "#4f6073",
+                      "surface-container-highest": "#e4e2e3",
+                      "surface-dim": "#dbd9db",
+                      "on-tertiary-fixed": "#281802",
+                      "on-primary-container": "#8192a7",
+                      "on-secondary-fixed-variant": "#653e00",
+                      "tertiary-fixed-dim": "#e1c29b",
+                      "on-surface-variant": "#44474c",
+                      "surface-variant": "#e4e2e3",
+                      "on-secondary-container": "#684000",
+                      "primary-fixed": "#d2e4fb",
+                      "tertiary-fixed": "#feddb5",
+                      "surface-container-high": "#e9e7e9",
+                      "secondary-fixed": "#ffddb8",
+                      "on-secondary": "#ffffff",
+                      "tertiary-container": "#38260b",
+                      "on-primary-fixed-variant": "#38485a",
+                      "inverse-surface": "#303032",
+                      "error": "#ba1a1a",
+                      "primary": "#041627",
+                      "inverse-primary": "#b7c8de",
+                      "on-tertiary-container": "#a88c69",
+                      "on-primary-fixed": "#0b1d2d",
+                      "success-green": "#10B981",
+                      "on-background": "#1b1c1d",
+                      "error-container": "#ffdad6",
+                      "on-surface": "#1b1c1d",
+                      "on-primary": "#ffffff",
+                      "error-red": "#EF4444",
+                      "primary-container": "#1a2b3c",
+                      "on-tertiary-fixed-variant": "#584326",
+                      "secondary-fixed-dim": "#ffb95f",
+                      "tertiary": "#211200",
+                      "surface-bright": "#fbf9fa",
+                      "accent-amber": "#F59E0B"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max": "1280px",
+                      "section-gap-md": "80px",
+                      "stack-md": "16px",
+                      "margin-mobile": "16px",
+                      "stack-lg": "32px",
+                      "section-gap-lg": "120px",
+                      "gutter": "24px",
+                      "stack-sm": "8px"
+              },
+              "fontFamily": {
+                      "headline-display": ["Inter", "sans-serif"],
+                      "body-lg": ["Inter", "sans-serif"],
+                      "headline-lg-mobile": ["Inter", "sans-serif"],
+                      "headline-md": ["Inter", "sans-serif"],
+                      "body-md": ["Inter", "sans-serif"],
+                      "headline-lg": ["Inter", "sans-serif"],
+                      "label-sm": ["Inter", "sans-serif"],
+                      "label-md": ["Inter", "sans-serif"],
+                      "headline-sm": ["Inter", "sans-serif"],
+                      "body-sm": ["Inter", "sans-serif"]
+              },
+              "fontSize": {
+                      "headline-display": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+              },
+              "boxShadow": {
+                  "ambient": "0px 4px 20px rgba(26, 43, 60, 0.05)",
+                  "ambient-hover": "0px 8px 30px rgba(26, 43, 60, 0.1)"
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        html { scroll-behavior: smooth; }
+        body { background-color: #fbf9fa; color: #1b1c1d; }
+        .antialiased { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        details[open] summary ~ * {
+            animation: sweep .3s ease-in-out;
+        }
+        @keyframes sweep {
+            0%    {opacity: 0; transform: translateY(-10px)}
+            100%  {opacity: 1; transform: translateY(0)}
+        }
+    </style>
+</head>
+<body class="antialiased bg-surface-container-lowest">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-sm transition-all border-b border-surface-container-highest">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+<div class="flex items-center">
+<a class="flex items-center" href="#"><img alt="Linchpin Systems Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP3MuWGj5zwN95oO8IjDFeWvDXaK4PiasRHwnI92pDQdZ_2E8p6YF84WZawFnFJi1oqhbicALuNrPg18uHGoFXW8mOl93evq5oZwMCI85dOwxUrzxd6geu9PlRUNgBwxsT9gwiFmlghJAkQ1OarkyEk-UTckNcWatSPVFS8wsuLjMrwZPLjg1Twwrd7Pa8xWfXs5e2BzYqQOc3HDcI-vj2HLTs3rDzmszavMup-xNmVnWkhVDRJ3fSfN_Qu8e9C1fgssWh9MRc0wFe"/></a>
+</div>
+<div class="hidden md:flex items-center gap-gutter">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#what-we-build">Systems</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#the-proof">How It Works</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#about-linchpin">About</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#faq">FAQ</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#pricing">Pricing</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-surface-container transition-colors" id="mobile-menu-btn" aria-label="Open menu">
+<span class="material-symbols-outlined text-primary" id="mobile-menu-icon">menu</span>
+</button>
+<a class="bg-gradient-to-r from-accent-amber to-[#D97706] text-on-primary font-label-md text-label-md px-6 py-3 rounded-DEFAULT shadow-ambient hover:shadow-ambient-hover hover:scale-105 active:scale-95 transition-all duration-300" href="mailto:kyler@linchpinsystems.co">Email Us</a>
+</div>
+</div>
+<!-- Mobile menu drawer -->
+<div class="md:hidden hidden border-t border-surface-container-highest bg-surface-container-lowest/95 backdrop-blur-xl" id="mobile-menu">
+<div class="flex flex-col px-margin-mobile py-4 gap-1">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors px-4 py-3 rounded-lg" href="#what-we-build" onclick="closeMobileMenu()">Systems</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors px-4 py-3 rounded-lg" href="#the-proof" onclick="closeMobileMenu()">How It Works</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors px-4 py-3 rounded-lg" href="#about-linchpin" onclick="closeMobileMenu()">About</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors px-4 py-3 rounded-lg" href="#faq" onclick="closeMobileMenu()">FAQ</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors px-4 py-3 rounded-lg" href="#pricing" onclick="closeMobileMenu()">Pricing</a>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="bg-surface-container-lowest py-24">
+<div class="px-margin-mobile md:px-gutter max-w-container-max mx-auto flex flex-col md:flex-row items-center gap-stack-lg">
+<div class="md:w-1/2 flex flex-col gap-stack-md">
+<span class="text-accent-amber font-label-md text-label-md uppercase tracking-wider">BUILT EXCLUSIVELY FOR HVAC</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-display md:text-headline-display text-primary">Your HVAC operation should run even when you're not watching it.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Linchpin Systems builds custom AI automation systems exclusively for residential HVAC businesses - so no lead goes cold, no review goes uncollected, no estimate goes unfollowed, and no maintenance contract lapses while you're running your operation.</p>
+<div class="flex flex-col sm:flex-row gap-4 mt-stack-sm">
+<a class="bg-gradient-to-r from-accent-amber to-[#D97706] text-center text-on-primary font-label-md text-label-md px-8 py-4 rounded-DEFAULT shadow-ambient hover:shadow-ambient-hover hover:scale-105 active:scale-95 transition-all duration-300" href="https://calendly.com/linchpinsystems/15min" target="_blank">Book a 15-Min Call</a>
+<a class="border-2 text-center border-primary-container text-primary-container font-label-md text-label-md px-8 py-4 rounded-DEFAULT hover:bg-surface-container transition-colors" href="#the-proof">Watch Live Demo</a>
+</div>
+</div>
+<div class="md:w-1/2 mt-stack-lg md:mt-0 relative w-full">
+<div class="absolute inset-0 bg-primary opacity-5 rounded-2xl blur-3xl transform translate-x-4 translate-y-4"></div>
+<img alt="Professional HVAC outdoor condenser units on a rooftop" class="relative z-10 w-full h-[400px] object-cover rounded-2xl shadow-ambient border border-surface-container-highest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKyUmQzeeO_siebi0l9OBkrubiifuiil222YIHbNIX-heiN8mBo_hKnuwSRfUsheNRj5zNY0l61mUblWfytpfPZaSnO00DC_6pI7RGqjZ-ZqQQqukVVNOEQZ-LtoTlFDpi2Kd2aIGfpkC2A-t3xplc_dP_7wr2PQ6MikU_9Yx5ACrXhfKiqSIegPDWZg0y1wE4wWEvOqWz7gWpSGM2SaRT2EYtURyECc9C6WGKq6u-DYTZZGOrGnFlnhaoea77Hrax7E3zFbLQQIRH"/>
+</div>
+</div>
+</section>
+<!-- The Problem Section -->
+<section class="bg-surface-container-lowest py-24" id="problem">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-section-gap-md max-w-3xl mx-auto px-margin-mobile">
+<span class="text-accent-amber font-label-md text-label-md uppercase tracking-wider">The Problem</span>
+<h2 class="font-headline-md text-headline-md md:font-headline-lg md:text-headline-lg text-primary mt-stack-sm">The problem isn't your service. It’s every opportunity that falls through the cracks while you’re delivering it.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter px-margin-mobile">
+<div class="bg-surface-container-lowest p-stack-lg rounded-xl shadow-ambient border border-error-container relative overflow-hidden group hover:shadow-ambient-hover transition-all">
+<div class="w-12 h-12 bg-error-container rounded-full flex items-center justify-center mb-stack-md">
+<span class="material-symbols-outlined text-error-red">warning</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-stack-sm">The 2 PM Attic Crisis</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">You're under a unit in a customer's attic at 2 PM on a Tuesday in July. Your phone rings. You can't answer. The homeowner has a broken air conditioner and it's 95 degrees outside. They hang up without leaving a message and immediately call the next contractor on their Google search results.</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-3">That scenario plays out dozens of times a month for the typical HVAC business. Meanwhile, a customer from last week hasn't left a Google review. An estimate you sent went unanswered. A maintenance contract is due for renewal and no one has followed up. None of this is happening because you don't care - it's happening because you're running a business and there aren't enough hours in the day.</p>
+</div>
+<div class="bg-surface-container-lowest p-stack-lg rounded-xl shadow-ambient border border-success-green/30 relative overflow-hidden group hover:shadow-ambient-hover transition-all">
+<div class="w-12 h-12 bg-success-green/20 rounded-full flex items-center justify-center mb-stack-md">
+<span class="material-symbols-outlined text-success-green">check_circle</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-stack-sm">The Linchpin Solution</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Linchpin catches the lead before they go cold. When a call is missed, the system sends an automatic text-back in under 60 seconds, logs the lead in your FSM, and alerts your team. From there, it keeps the follow-up moving by chasing unsold estimates, collecting Google reviews, and handling the small touches that usually get buried when you’re running calls, crews, and customers all day.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- What We Build / Features -->
+<section class="bg-primary text-on-primary py-section-gap-lg relative overflow-hidden" id="what-we-build">
+<div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+<div class="px-margin-mobile md:px-gutter max-w-container-max mx-auto relative z-10">
+<div class="text-center mb-section-gap-md max-w-4xl mx-auto">
+<span class="text-accent-amber font-label-md text-label-md uppercase tracking-wider">WHAT WE BUILD</span>
+<h2 class="font-headline-md text-headline-md md:font-headline-lg md:text-headline-lg mt-stack-sm">13 automation systems built exclusively for residential HVAC businesses. One connected operation.</h2>
+<p class="font-body-lg text-body-lg text-primary-fixed-dim mt-stack-md max-w-3xl mx-auto"></p><p class="" data-end="1791" data-start="1604">Linchpin Systems builds custom automations that run in the background of your HVAC business, handling the follow-up, logging, reminders, and outreach your team doesn’t have time to chase.</p><p class="" data-end="1791" data-start="1604"><br/></p>
+<p class="" data-end="2002" data-start="1793">Built from scratch for your operation. Connected to your FSM platform (Jobber, HouseCall Pro, ServiceTitan, Google Sheets, etc..), your Email Platform (Outlook, Gmail, etc..), and more. No off-the-shelf software. No shared platform. Built on top of what you already do, running for you and maintained for you.</p><p class=""></p>
+</div>
+<div class="grid grid-cols-1 gap-4 max-w-4xl mx-auto">
+<!-- 1. Lead Response Automation -->
+<details class="group bg-primary-container rounded-xl border border-accent-amber overflow-hidden transition-all duration-300" open="">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<div class="flex flex-col">
+<div class="inline-flex items-center gap-2 bg-accent-amber/20 text-accent-amber px-2 py-0.5 rounded-full font-label-sm text-[10px] mb-2 w-fit">
+<span class="material-symbols-outlined text-[12px]">star</span> Flagship
+                                </div>
+<h4 class="font-headline-sm text-headline-sm text-on-primary">Lead Response Automation</h4>
+</div>
+<span class="material-symbols-outlined text-primary-fixed-dim transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6">
+<p class="font-body-md text-primary-fixed-dim mb-6">When a call to your business goes unanswered, the system automatically sends a personalized text-back in under 60 seconds, logs the lead in your CRM or FSM, and alerts your team with the caller’s details. The lead gets a response before they call the next HVAC company on Google.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex items-center gap-3 text-sm text-primary-fixed-dim"><span class="material-symbols-outlined text-accent-amber">bolt</span> Triggers in under 60 seconds</div>
+<div class="flex items-center gap-3 text-sm text-primary-fixed-dim"><span class="material-symbols-outlined text-accent-amber">sync</span> Connects to Jobber, ServiceTitan, etc.</div>
+<div class="flex items-center gap-3 text-sm text-primary-fixed-dim"><span class="material-symbols-outlined text-accent-amber">notifications_active</span> Alerts your team instantly</div>
+<div class="flex items-center gap-3 text-sm text-primary-fixed-dim"><span class="material-symbols-outlined text-accent-amber">verified_user</span> Logs lead in your CRM/FSM</div>
+</div>
+</div>
+</details>
+<!-- 2. Review Collection -->
+<details class="group bg-primary/50 hover:bg-primary-container rounded-xl border border-surface-tint/50 hover:border-surface-tint transition-all duration-300">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<h4 class="font-headline-sm text-headline-sm text-on-primary">Review Collection Automation</h4>
+<span class="material-symbols-outlined text-primary-fixed-dim transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6">
+<p class="font-body-md text-primary-fixed-dim mb-6">When a job is marked complete in your FSM, the system waits 2–4 hours and sends the customer an SMS with a direct Google review link. If no review comes in, it follows up by email after 48 hours. This helps compound your Google Business Profile ranking over time without your team having to remember every ask.</p>
+</div>
+</details>
+<!-- 3. Unsold Estimate Follow-Up -->
+<details class="group bg-primary/50 hover:bg-primary-container rounded-xl border border-surface-tint/50 hover:border-surface-tint transition-all duration-300">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<h4 class="font-headline-sm text-headline-sm text-on-primary">Unsold Estimate Follow-Up</h4>
+<span class="material-symbols-outlined text-primary-fixed-dim transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6">
+<p class="font-body-md text-primary-fixed-dim mb-6">When an estimate hasn’t converted into a booked job within 5–7 days, the system automatically triggers an SMS and email follow-up sequence. It helps recover revenue from diagnostic time you already invested instead of letting good estimates die in the inbox.</p>
+</div>
+</details>
+<!-- Hidden Container for Items 4-13 -->
+<div class="flex flex-col gap-4 hidden" id="extra-items">
+<!-- 4. Appointment Reminders -->
+<details class="group bg-primary/50 hover:bg-primary-container rounded-xl border border-surface-tint/50 hover:border-surface-tint transition-all duration-300">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<h4 class="font-headline-sm text-headline-sm text-on-primary">Appointment Reminder Sequences</h4>
+<span class="material-symbols-outlined text-primary-fixed-dim transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6">
+<p class="font-body-md text-primary-fixed-dim mb-6">When an appointment is scheduled, the system sends an immediate booking confirmation, followed by a 24-hour reminder and a 2-hour reminder before arrival. Customers know you’re coming, your team gets fewer “are you still on the way?” calls, and no-shows drop in a measurable way.</p>
+</div>
+</details>
+<!-- 5. Maintenance Renewals -->
+<details class="group bg-primary/50 hover:bg-primary-container rounded-xl border border-surface-tint/50 hover:border-surface-tint transition-all duration-300">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<h4 class="font-headline-sm text-headline-sm text-on-primary">Maintenance Contract Renewal Sequences</h4>
+<span class="material-symbols-outlined text-primary-fixed-dim transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6">
+<p class="font-body-md text-primary-fixed-dim mb-6">The system checks your FSM for maintenance contracts expiring in 30, 60, and 90 days, then sends a systematic SMS and email renewal sequence at each interval. What used to live in a spreadsheet, or in someone’s memory, becomes a reliable recurring revenue protection system.</p>
+</div>
+</details>
+<!-- 6. Dormant Customer Reactivation -->
+<details class="group bg-primary/50 hover:bg-primary-container rounded-xl border border-surface-tint/50 hover:border-surface-tint transition-all duration-300">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<h4 class="font-headline-sm text-headline-sm text-on-primary">Dormant Customer Reactivation</h4>
+<span class="material-symbols-outlined text-primary-fixed-dim transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6">
+<p class="font-body-md text-primary-fixed-dim mb-6">The system finds customers in your FSM who haven’t booked service in 12–18 months and sends a seasonal SMS and email campaign to bring them back. It turns your old customer database into booked jobs without manual list pulling or one-off outreach.</p>
+</div>
+</details>
+<!-- 7. Seasonal Campaign Sequences -->
+<details class="group bg-primary/50 hover:bg-primary-container rounded-xl border border-surface-tint/50 hover:border-surface-tint transition-all duration-300">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<h4 class="font-headline-sm text-headline-sm text-on-primary">Seasonal Campaign Sequences</h4>
+<span class="material-symbols-outlined text-primary-fixed-dim transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6">
+<p class="font-body-md text-primary-fixed-dim mb-6">Customer lists are filtered by last service type, equipment age, service area, or other FSM data, then used for pre-season tune-up campaigns, post-storm inspection offers, and equipment replacement conversations. It creates bookings that usually never happen because nobody has time to run the outreach.</p>
+</div>
+</details>
+<!-- 8. New Customer Onboarding -->
+<details class="group bg-primary/50 hover:bg-primary-container rounded-xl border border-surface-tint/50 hover:border-surface-tint transition-all duration-300">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<h4 class="font-headline-sm text-headline-sm text-on-primary">New Customer Onboarding Sequence</h4>
+<span class="material-symbols-outlined text-primary-fixed-dim transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6">
+<p class="font-body-md text-primary-fixed-dim mb-6">When a first job is booked, the system sends a welcome SMS with the technician name and arrival window, plus a welcome email with pre-appointment instructions. After the job is complete, the customer automatically flows into the review collection sequence.</p>
+</div>
+</details>
+<!-- 9. Technician Dispatch -->
+<details class="group bg-primary/50 hover:bg-primary-container rounded-xl border border-surface-tint/50 hover:border-surface-tint transition-all duration-300">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<h4 class="font-headline-sm text-headline-sm text-on-primary">Technician Dispatch &amp; Job Status</h4>
+<span class="material-symbols-outlined text-primary-fixed-dim transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6">
+<p class="font-body-md text-primary-fixed-dim mb-6">When a technician is marked en route, the customer automatically gets an SMS with the ETA. This cuts down the “where is my technician?” calls that drain dispatcher time and keeps customers informed without extra manual updates.</p>
+</div>
+</details>
+<!-- 10. Payment Reminder -->
+<details class="group bg-primary/50 hover:bg-primary-container rounded-xl border border-surface-tint/50 hover:border-surface-tint transition-all duration-300">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<h4 class="font-headline-sm text-headline-sm text-on-primary">Payment Reminder &amp; Invoice Follow-Up</h4>
+<span class="material-symbols-outlined text-primary-fixed-dim transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6">
+<p class="font-body-md text-primary-fixed-dim mb-6">When an invoice stays unpaid after a defined number of days, the system sends an automated SMS and email reminder sequence. It reduces outstanding receivables without the owner or office team having to make awkward manual collection calls.</p>
+</div>
+</details>
+<!-- 11. Operational Workflow -->
+<details class="group bg-primary/50 hover:bg-primary-container rounded-xl border border-surface-tint/50 hover:border-surface-tint transition-all duration-300">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<h4 class="font-headline-sm text-headline-sm text-on-primary">Operational Workflow Automation</h4>
+<span class="material-symbols-outlined text-primary-fixed-dim transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6">
+<p class="font-body-md text-primary-fixed-dim mb-6">Internal routing, job assignments, alerts, invoicing triggers, QuickBooks sync, and other handoffs are automated around your actual process. This is the connective tissue that keeps the operation moving without everything depending on manual follow-through.</p>
+</div>
+</details>
+<!-- 12. Reputation Monitoring -->
+<details class="group bg-primary/50 hover:bg-primary-container rounded-xl border border-surface-tint/50 hover:border-surface-tint transition-all duration-300">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<h4 class="font-headline-sm text-headline-sm text-on-primary">Reputation Monitoring and Response Alerts</h4>
+<span class="material-symbols-outlined text-primary-fixed-dim transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6">
+<p class="font-body-md text-primary-fixed-dim mb-6">When a new review is detected, the system alerts the owner and can draft a response suggestion. You stay on top of your online reputation without manually checking Google every day or letting reviews sit unanswered.</p>
+</div>
+</details>
+<!-- 13. Employee Onboarding -->
+<details class="group bg-primary/50 hover:bg-primary-container rounded-xl border border-surface-tint/50 hover:border-surface-tint transition-all duration-300">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<h4 class="font-headline-sm text-headline-sm text-on-primary">Employee and Technician Onboarding Automation</h4>
+<span class="material-symbols-outlined text-primary-fixed-dim transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6">
+<p class="font-body-md text-primary-fixed-dim mb-6">When a new hire starts, the system triggers a structured onboarding checklist, document collection sequence, and training milestone reminders. It reduces the admin load of hiring and helps new technicians move through the process without constant manual chasing.</p>
+</div>
+</details>
+</div>
+<!-- Toggle Button -->
+<div class="flex justify-center mt-8">
+<button class="inline-flex items-center gap-2 bg-gradient-to-r from-accent-amber to-[#D97706] text-on-primary font-label-md text-label-md px-8 py-4 rounded-DEFAULT shadow-ambient hover:shadow-ambient-hover hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer" id="toggle-systems-btn">
+<span class="" id="btn-text">Show All 13 Systems</span>
+<span class="material-symbols-outlined transition-transform duration-300" id="btn-icon" style="transform: rotate(0deg);">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+</section><section class="bg-surface-container-lowest py-24 border-b border-surface-container-highest" id="how-it-works">
+<div class="px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+<div class="text-center mb-section-gap-md max-w-3xl mx-auto">
+<span class="text-accent-amber font-label-md text-label-md uppercase tracking-wider">HOW IT WORKS</span>
+<h2 class="font-headline-md text-headline-md md:font-headline-lg md:text-headline-lg text-primary mt-stack-sm">From first conversation to fully automated operation.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+<!-- Step 1 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full bg-accent-amber/10 border-2 border-accent-amber flex items-center justify-center mb-6">
+<span class="text-xl font-bold text-[#D97706]">1</span>
+</div>
+<h3 class="font-headline-sm text-[20px] text-primary mb-2">Consultation</h3>
+<p class="font-body-sm text-on-surface-variant">We schedule a call or exchange a few emails. You tell me about your operation and how you currently handle the problems we solve. I ask questions until I know exactly which system(s) will provide maximum value. You can start with one or multiple. If we’re in agreement, we move to the next step.</p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full bg-accent-amber/10 border-2 border-accent-amber flex items-center justify-center mb-6">
+<span class="text-xl font-bold text-[#D97706]">2</span>
+</div>
+<h3 class="font-headline-sm text-[20px] text-primary mb-2">Agreement</h3>
+<p class="font-body-sm text-on-surface-variant">A straightforward service agreement is sent the same day or next. Once signed and the deposit is received, the build begins. You fill out an intake form and authorize access to your tools. No ambiguity on scope, timeline, or cost.</p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full bg-accent-amber/10 border-2 border-accent-amber flex items-center justify-center mb-6">
+<span class="text-xl font-bold text-[#D97706]">3</span>
+</div>
+<h3 class="font-headline-sm text-[20px] text-primary mb-2">Custom Build</h3>
+<p class="font-body-sm text-on-surface-variant">Every automation is built from scratch for your specific operation and connected to the tools you already use - Jobber, HouseCall Pro, ServiceTitan, and more. Everything is tested end-to-end internally before you ever see it.</p>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full bg-accent-amber/10 border-2 border-accent-amber flex items-center justify-center mb-6">
+<span class="text-xl font-bold text-[#D97706]">4</span>
+</div>
+<h3 class="font-headline-sm text-[20px] text-primary mb-2">Go-Live</h3>
+<p class="font-body-sm text-on-surface-variant">I walk you through what was built and confirm everything fires correctly. Documentation is handed over. We go live. The remaining 50% of the setup fee is due at go-live. From that point forward it runs automatically - no staff involvement, nothing falling through the cracks.</p>
+</div>
+<!-- Step 5 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full bg-accent-amber/10 border-2 border-accent-amber flex items-center justify-center mb-6">
+<span class="text-xl font-bold text-[#D97706]">5</span>
+</div>
+<h3 class="font-headline-sm text-[20px] text-primary mb-2">Ongoing Support</h3>
+<p class="font-body-sm text-on-surface-variant">Monthly monitoring, adjustments, and support are included in the retainer. If something stops working, I fix it. If your business evolves, the system evolves with it.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Video Demonstration -->
+<section class="bg-surface-container-low py-24 border-b border-surface-container-highest" id="the-proof">
+<div class="px-margin-mobile md:px-gutter max-w-container-max mx-auto text-center">
+<div class="mb-section-gap-md max-w-3xl mx-auto">
+<span class="text-accent-amber font-label-md text-label-md uppercase tracking-wider">The Proof</span>
+<h2 class="font-headline-md text-headline-md md:font-headline-lg md:text-headline-lg text-primary mt-stack-sm">Watch the Lead Response Automation fire in real time.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-stack-md">This is a demonstration recorded live by Kyler, the Founder - not a mockup. A real missed call triggers the full system: automated text fires to the lead, the CRM entry appears in Jobber, and the owner receives a notification - all within a few seconds. Although this is just one of the systems we offer, this one was chosen as the primary demonstration.</p>
+<div class="mt-stack-md bg-surface-container border border-surface-container-highest rounded-lg px-6 py-4 text-left max-w-2xl mx-auto">
+<p class="font-body-sm text-on-surface-variant"><span class="font-semibold text-primary">⚠️ Demo uses Jobber only as an example.</span> Leads will be automatically logged to ANY FSM platform that you use - Housecall Pro, ServiceTitan, Google Sheets, or whatever you already run. Nothing required on your end.</p>
+</div>
+</div>
+<div class="max-w-4xl mx-auto relative group cursor-pointer" data-video-url="https://www.loom.com/share/4b567922edd5411d8fb21c46576f2257" id="video-placeholder-container">
+<div class="absolute inset-0 bg-primary opacity-10 rounded-xl blur-2xl transform translate-x-4 translate-y-4"></div>
+<div class="relative z-10 bg-primary rounded-xl overflow-hidden shadow-ambient group-hover:shadow-ambient-hover transition-all duration-300 border border-surface-tint/20 aspect-video flex items-center justify-center bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida/ADBb0ujNleFaTJqjnX0v3N_yNY3K7MqlmGIaUa9QaK4H0Q4uazGUONz5xJLngVzF8VEpndkLXAnDzms5GjtKB4xpBUhi-LUO1bd34Fj7uqK8KjeY1KXqRx6WtAs3ydbyVBbWQdEuG7LK8V8bp3traAZRdfqSRvrDRQgUvF6t3PXZpO1ntSwCVuPKEBz_iaXP9k8nB-xHDgp46GqdGn3imePFsiInupBjC6TiuATP8sNIJyQdXK9_Z8wnTF7lP48Y");'>
+<!-- Custom Play Button -->
+<div class="w-20 h-20 md:w-24 md:h-24 bg-[#D97706] rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-white text-5xl md:text-6xl pl-1">play_arrow</span>
+</div>
+</div>
+<p class="text-center font-label-md text-label-md text-primary mt-4 italic">Watch: 2-Minute Lead Response Demo</p>
+</div>
+</div>
+</section>
+<!-- Social Proof / Stats -->
+<section class="bg-surface-container-low py-24 border-y border-surface-container-highest">
+<div class="px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter text-center">
+<div class="p-stack-md">
+<h4 class="font-headline-lg text-headline-lg text-[#f2991a] mb-stack-sm">100x</h4>
+<p class="font-body-md text-body-md text-on-surface-variant italic">"Responding within 5 minutes increases conversion rates by up to 100x compared to a 30-minute delay."</p>
+<p class="font-body-sm text-on-surface-variant mt-2">- Lead Response Management Study</p>
+</div>
+<div class="p-stack-md border-y md:border-y-0 md:border-x border-surface-container-highest">
+<h4 class="font-headline-lg text-headline-lg text-[#f2991a] mb-stack-sm">78%</h4>
+<p class="font-body-md text-body-md text-on-surface-variant italic">"78% of customers buy from the first business that responds to their inquiry."</p>
+<p class="font-body-sm text-on-surface-variant mt-2">- LeadConnect Research</p>
+</div>
+<div class="p-stack-md">
+<h4 class="font-headline-lg text-headline-lg text-[#f2991a] mb-stack-sm">98%</h4>
+<p class="font-body-md text-body-md text-on-surface-variant italic">"98% of SMS messages are opened. 90% are read within 3 minutes."</p>
+<p class="font-body-sm text-on-surface-variant mt-2">- MobileSquared</p>
+</div>
+</div>
+</div>
+</section>
+<!-- About Founder -->
+<section class="bg-surface-container-lowest py-24" id="about-linchpin">
+<div class="max-w-container-max mx-auto px-margin-mobile">
+<div class="bg-surface-container-lowest rounded-2xl shadow-ambient overflow-hidden border border-surface-container-highest flex flex-col md:flex-row">
+<div class="md:w-2/3 p-8 md:p-12 order-2 md:order-1">
+<div class="flex flex-col gap-4 relative">
+<span class="text-accent-amber font-label-md text-label-md uppercase tracking-wider">About Linchpin</span>
+<h2 class="font-headline-md text-headline-md text-primary">Built by someone who respects what you’ve built.</h2>
+<div class="font-body-md text-body-md text-on-surface-variant space-y-4 mt-2 leading-relaxed">
+<p class="">My name is Kyler Quirk. I’m the founder of Linchpin Systems. I’m a Veteran, Louisiana born and raised, and a proud American.</p>
+<p class="">I built this company because I kept seeing the same problem - good HVAC operators running excellent businesses and losing revenue not because of bad service, but because no one was there to follow up. The missed call at 2pm. The estimate that never got a response. The maintenance customer who renewed with someone else because nobody reached out first.</p>
+<p class="font-semibold text-primary py-2 border-l-4 border-accent-amber pl-4">That's not a people problem. It's a systems problem. And it has a fix.</p>
+<p class="">I built Linchpin Systems specifically for HVAC because I respect what owner-operators have built - the trucks, the reputation, the years of hard work. You deserve a business that works as hard as you do by keeping everything together on its own - hence the name Linchpin. I build the systems that make this possible, and I stand behind every one of them personally.</p>
+</div>
+</div>
+</div>
+<div class="md:w-1/3 bg-surface-container-low p-8 flex flex-col items-center justify-center border-b md:border-b-0 md:border-l border-surface-container-highest order-1 md:order-2">
+<div class="relative mb-4">
+<img alt="Kyler Quirk" class="rounded-full border-4 border-white shadow-md bg-white object-cover w-[280px] h-[280px]" src="https://lh3.googleusercontent.com/aida/ADBb0uhnyjxXB7enmRm0MUfEKp82YehbbdrfvUc-qCPbQhduUYSOvHXfDIBm9xya9kew8bzX6zgmg8dSVofSGydfxqNw5A6QzjCPKUBhEVwuLJdzIiBpH6djigvhUI8yy3ieqwLjwXY0wR4NOYMqr-OJiG66dpuMIXOdqgIc_icxS5Bx4ostj2wLNgTsQRlPzqPXyhQNDHNV4qR31Izk8ymbNmjMxwJx_dLrstxpG4DDV6m4Gr-FoS6MNhdE-RzW"/>
+</div>
+<div class="text-center">
+<h4 class="font-headline-sm text-headline-sm text-primary">Kyler Quirk</h4>
+<p class="text-accent-amber font-label-sm uppercase tracking-wide">Founder &amp; Veteran</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="bg-surface-container-low py-24 px-margin-mobile md:px-gutter" id="faq">
+<div class="max-w-3xl mx-auto">
+<div class="text-center mb-section-gap-md">
+<span class="text-accent-amber font-label-md text-label-md uppercase tracking-wider">Everything you need to know before a call.</span>
+<h2 class="font-headline-md text-headline-md md:font-headline-lg md:text-headline-lg text-primary mt-stack-sm">Frequently Asked Questions</h2>
+</div>
+<div class="space-y-4">
+<details class="group bg-surface-container-lowest rounded-xl border border-surface-container-highest shadow-sm [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between p-6 cursor-pointer font-headline-sm text-headline-sm text-primary">
+<span class="">What tools do you connect to?</span>
+<span class="material-symbols-outlined transition duration-300 group-open:-rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 font-body-md text-body-md text-on-surface-variant">
+<p class=""></p><p class="" data-end="8292" data-start="7928">We connect to thousands of tools, including the FSM platforms residential HVAC businesses already use, like Jobber, HouseCall Pro, ServiceTitan, Google Sheets, and more. We can also connect to Google Business Profile for review collection, invoicing and payment tools like Stripe or QuickBooks, and email platforms like Gmail, Google Workspace, Outlook, and Yahoo.</p>
+<p class="" data-end="8395" data-start="8294"><br/></p><p class="" data-end="8395" data-start="8294">The goal is simple: make the tools you already use talk to each other when the right trigger happens.</p><p class=""></p>
+</div>
+</details>
+<details class="group bg-surface-container-lowest rounded-xl border border-surface-container-highest shadow-sm [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between p-6 cursor-pointer font-headline-sm text-headline-sm text-primary">
+<span class="">How long does it take to setup?</span>
+<span class="material-symbols-outlined transition duration-300 group-open:-rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 font-body-md text-body-md text-on-surface-variant">
+<p class=""></p><p class="" data-end="8642" data-start="8428">Most builds take up to four weeks from signed agreement and 50% deposit, but many are completed faster. Timeline depends on the number of systems being built, the tools involved, and how quickly access is provided. We give you clear instructions for granting access, then build, test, and launch the automations as quickly as possible.</p><p class=""></p>
+</div>
+</details>
+<details class="group bg-surface-container-lowest rounded-xl border border-surface-container-highest shadow-sm [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between p-6 cursor-pointer font-headline-sm text-headline-sm text-primary">
+<span class="">What happens if something breaks?</span>
+<span class="material-symbols-outlined transition duration-300 group-open:-rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 font-body-md text-body-md text-on-surface-variant">
+<p class=""></p><p class="" data-end="8918" data-start="8805">Monitoring, maintenance, and support are included in the monthly retainer. If something stops working, we fix it. You are not buying a system and getting left alone with it. Linchpin maintains the automations so they keep doing the job they were built to do.</p><p class=""></p>
+</div>
+</details>
+<details class="group bg-surface-container-lowest rounded-xl border border-surface-container-highest shadow-sm [&amp;_summary::-webkit-details-marker]:hidden" open="">
+<summary class="flex items-center justify-between p-6 cursor-pointer font-headline-sm text-headline-sm text-primary">
+<span class="">Is there a contract?</span>
+<span class="material-symbols-outlined transition duration-300 group-open:-rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 font-body-md text-body-md text-on-surface-variant">
+<p class=""></p><p class="" data-end="9252" data-start="9092">We use a straightforward Client Service Agreement that covers scope, payment terms, confidentiality, cancellation, project timeline, and IP/data ownership. There is no long-term lock-in. You can cancel with 30 days’ notice.</p><p class=""></p>
+</div>
+</details>
+<details class="group bg-surface-container-lowest rounded-xl border border-surface-container-highest shadow-sm [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between p-6 cursor-pointer font-headline-sm text-headline-sm text-primary">
+<span class="">What exactly does the Lead Response Automation do?</span>
+<span class="material-symbols-outlined transition duration-300 group-open:-rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 font-body-md text-body-md text-on-surface-variant">
+<p class=""></p><p class="">When a call to your business goes unanswered, the system automatically sends a personalized text message to the caller in under 60 seconds, logs the lead in your FSM, and sends you a notification with the lead’s details for priority callback. It handles the highest-dollar problem in HVAC: leads going cold while you’re on a job.</p><p class=""></p>
+</div>
+</details>
+<details class="group bg-surface-container-lowest rounded-xl border border-surface-container-highest shadow-sm [&_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between p-6 cursor-pointer font-headline-sm text-headline-sm text-primary">
+<span>What are the other automation systems you offer?</span>
+<span class="material-symbols-outlined transition duration-300 group-open:-rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 font-body-md text-body-md text-on-surface-variant space-y-4">
+<p><strong class="text-primary">Review Collection Automation</strong> - Triggers 2-4 hours after a job is marked complete in your FSM tool. Sends an SMS to the customer with a direct Google review link, followed by an email follow-up at 48 hours if no review has been submitted. Compounds your Google Business Profile ranking over time without anyone on your team remembering to ask.</p>
+<p><strong class="text-primary">Appointment Reminder Sequences</strong> - A booking confirmation fires immediately when an appointment is scheduled, followed by a 24-hour reminder and a 2-hour reminder. Reduces no-shows directly and measurably.</p>
+<p><strong class="text-primary">Unsold Estimate Follow-Up</strong> - When an estimate isn't converted to a job within 5-7 days, the system triggers an SMS and email follow-up sequence automatically. Recovers revenue from work you already invested diagnostic time in.</p>
+<p><strong class="text-primary">Maintenance Contract Renewal Sequences</strong> - Queries your FSM tool for contracts expiring in 30, 60, and 90 days and fires a systematic SMS and email sequence at each interval. Converts a spreadsheet-managed or completely manual process into a reliable recurring revenue protection system.</p>
+<p><strong class="text-primary">Dormant Customer Reactivation</strong> - Queries your FSM tool for customers with no service in 12-18 months and fires a seasonal SMS and email campaign. Turns a dormant database into booked jobs without any manual effort.</p>
+<p><strong class="text-primary">Seasonal Campaign Sequences</strong> - Customer list filtered by last service type, equipment age, or service area feeds pre-season tune-up campaigns, post-storm inspection campaigns, and equipment replacement conversations. Generates bookings that would never happen without the outreach.</p>
+<p><strong class="text-primary">New Customer Onboarding Sequence</strong> - First job booked triggers a welcome SMS with technician name and arrival window, a welcome email with pre-appointment instructions, and then feeds directly into the review collection sequence after the job completes.</p>
+<p><strong class="text-primary">Technician Dispatch and Job Status Communication</strong> - Technician marked en route triggers an automated SMS to the customer with ETA. Eliminates the "where is my technician" calls that drain dispatcher time.</p>
+<p><strong class="text-primary">Payment Reminder and Overdue Invoice Follow-Up</strong> - Invoice unpaid after a defined number of days triggers an SMS and email sequence. Reduces outstanding receivables without the owner making awkward manual collection calls.</p>
+<p><strong class="text-primary">Operational Workflow Automation</strong> - Internal routing logic: job assignments, internal alerts, invoicing triggers, QuickBooks sync. The connective tissue that makes the whole operation run without manual handoffs.</p>
+<p><strong class="text-primary">Reputation Monitoring and Response Alerts</strong> - New review detected triggers an owner alert and a drafted response suggestion. Keeps the owner engaged with his online reputation without monitoring it manually.</p>
+<p><strong class="text-primary">Employee and Technician Onboarding Automation</strong> - New hire triggers a structured checklist, document collection sequence, and training milestone reminders. Reduces the administrative burden of hiring in a labor-constrained industry.</p>
+</div>
+</details>
+</div>
+</div>
+</section>
+<!-- Pricing -->
+<section class="bg-surface-container-lowest py-24 px-margin-mobile md:px-gutter" id="pricing">
+<div class="max-w-container-max mx-auto text-center mb-section-gap-md">
+<h2 class="font-headline-md text-headline-md md:font-headline-lg md:text-headline-lg text-primary">Straightforward pricing. No surprises.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-stack-sm max-w-2xl mx-auto">A single recovered job typically covers the monthly retainer entirely. The average HVAC business doing $1M in revenue already spends $2,500–$8,000 per month on marketing to generate inbound calls. This system makes sure that investment doesn’t go to waste the moment the phone rings.</p>
+</div>
+<div class="flex flex-col md:flex-row justify-center items-center gap-8 max-w-4xl mx-auto relative">
+<!-- Setup Fee Card -->
+<div class="bg-surface-container-lowest rounded-xl p-stack-lg shadow-ambient border border-surface-container-highest flex-1 w-full">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Setup Fee</h3>
+<div class="mb-stack-md border-b border-surface-container pb-4">
+<span class="font-headline-md text-headline-md text-primary">$3,000–$4,000</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase mt-1">One-time payment</p>
+</div>
+<ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check</span> Custom build</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check</span> Full configuration</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check</span> End-to-end testing</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check</span> Onboarding included</li>
+</ul>
+</div>
+<!-- Connector -->
+<div class="flex items-center justify-center w-12 h-12 rounded-full bg-primary text-on-primary z-10 shrink-0 shadow-lg -my-4 md:my-0">
+<span class="material-symbols-outlined">add</span>
+</div>
+<!-- Monthly Retainer Card -->
+<div class="bg-surface-container-lowest rounded-xl p-stack-lg shadow-ambient border border-surface-container-highest flex-1 w-full">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Monthly Retainer</h3>
+<div class="mb-stack-md border-b border-surface-container pb-4">
+<span class="font-headline-md text-headline-md text-primary">$1,000–$1,300</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase mt-1">Per month</p>
+</div>
+<ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check</span> Ongoing monitoring</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check</span> Maintenance &amp; updates</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check</span> Priority support</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check</span> System optimization</li>
+</ul>
+</div>
+</div>
+<div class="max-w-3xl mx-auto mt-section-gap-md text-center bg-surface-container p-stack-lg rounded-xl border border-surface-container-highest">
+<p class="font-headline-sm text-headline-sm text-primary mb-2">The more systems you add, the less each one costs.</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Most clients start with one system, see it recover real revenue within the first weeks, and come back to add more. We reward that momentum. Each additional automation you add as an existing client comes with a reduced setup fee and a smaller incremental increase to your retainer - not the full single-system rate.</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">The result: a fully automated HVAC operation that costs a fraction of what it would if each system were priced independently - and pays for itself many times over through leads recovered, reviews collected, estimates closed, and contracts renewed.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a class="bg-gradient-to-r from-accent-amber to-[#D97706] text-on-primary font-label-md text-label-md px-8 py-4 rounded-DEFAULT shadow-ambient hover:shadow-ambient-hover hover:scale-105 active:scale-95 transition-all duration-300" href="https://calendly.com/linchpinsystems/15min" target="_blank">Book a 15-Min Call</a>
+<a class="border-2 border-primary text-primary font-label-md text-label-md px-8 py-4 rounded-DEFAULT hover:bg-surface-container transition-colors" href="mailto:kyler@linchpinsystems.co">Email Us</a>
+</div>
+<p class="font-body-sm text-on-surface-variant mt-6">The pricing above is for a single automation system - most clients start with the Lead Response Automation as the highest-ROI entry point. Once it’s live and you’re recovering revenue, adding more systems costs you less per system, not more.</p>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="bg-surface-container-low py-24 border-y border-surface-container-highest" id="testimonials">
+<div class="px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+<div class="text-center mb-section-gap-md">
+<span class="text-accent-amber font-label-md text-label-md uppercase tracking-wider">Testimonials</span>
+<h2 class="font-headline-md text-headline-md md:font-headline-lg md:text-headline-lg text-primary mt-stack-sm">Trusted by HVAC Professionals</h2>
+</div>
+<div class="grid grid-cols-1 gap-gutter">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-ambient max-w-2xl mx-auto border border-surface-container-highest">
+<p class="font-body-lg text-body-lg text-on-surface mb-6 italic">"I was losing jobs every week just from missed calls - I didn’t even realize how many until I had something tracking it. The lead response system paid for itself in the first month."</p>
+<div class="mt-2">
+<p class="font-label-md text-label-md text-primary">Danny B.</p>
+<p class="font-body-sm text-on-surface-variant">Residential HVAC Owner, Gulf Coast</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-ambient max-w-2xl mx-auto border border-surface-container-highest mt-gutter">
+<p class="font-body-lg text-body-lg text-on-surface mb-6 italic">"The estimate follow-up alone recovered jobs I had completely written off. My close rate went up without me doing anything different."</p>
+<div class="mt-2">
+<p class="font-label-md text-label-md text-primary">Travis O.</p>
+<p class="font-body-sm text-on-surface-variant">Owner-Operator, Texas</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="bg-primary text-on-primary py-section-gap-lg text-center px-margin-mobile md:px-gutter relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' viewBox=\'0 0 20 20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.05\' fill-rule=\'evenodd\'%3E%3Ccircle cx=\'3\' cy=\'3\' r=\'3\'/%3E%3Ccircle cx=\'13\' cy=\'13\' r=\'3\'/%3E%3C/g%3E%3C/svg%3E')]"></div>
+<div class="max-w-4xl mx-auto relative z-10">
+<h2 class="font-headline-md text-headline-md md:font-headline-lg md:text-headline-lg mb-stack-md">Ready to stop losing leads to missed calls?</h2>
+<p class="font-body-lg text-body-lg text-primary-fixed-dim mb-stack-lg max-w-2xl mx-auto"></p><p class="font-body-lg text-body-lg text-primary-fixed-dim max-w-2xl mx-auto">Schedule a call below or email us. I’ll learn about your operation, provide information on how the systems could apply to it for maximum benefit, and answer any questions. I’ll tell you exactly what I’d build for your operation and what it would cost. You decide from there.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4 mt-12">
+<a class="bg-gradient-to-r from-accent-amber to-[#D97706] text-on-primary font-label-md text-label-md px-10 py-5 rounded-DEFAULT shadow-ambient hover:shadow-ambient-hover hover:scale-105 active:scale-95 transition-all duration-300" href="https://calendly.com/linchpinsystems/15min" target="_blank">Book 15-Min Call</a>
+<a class="border-2 border-primary-fixed-dim text-primary-fixed-dim font-label-md text-label-md px-10 py-5 rounded-DEFAULT hover:bg-white/10 transition-colors" href="mailto:kyler@linchpinsystems.co">Email Us</a>
+</div>
+</div>
+</section>
+<footer class="bg-surface-container-lowest py-8 border-t border-surface-container-highest px-margin-mobile md:px-gutter">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex items-center gap-4">
+<img alt="Linchpin Systems Logo" class="h-8 w-auto object-contain grayscale opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP3MuWGj5zwN95oO8IjDFeWvDXaK4PiasRHwnI92pDQdZ_2E8p6YF84WZawFnFJi1oqhbicALuNrPg18uHGoFXW8mOl93evq5oZwMCI85dOwxUrzxd6geu9PlRUNgBwxsT9gwiFmlghJAkQ1OarkyEk-UTckNcWatSPVFS8wsuLjMrwZPLjg1Twwrd7Pa8xWfXs5e2BzYqQOc3HDcI-vj2HLTs3rDzmszavMup-xNmVnWkhVDRJ3fSfN_Qu8e9C1fgssWh9MRc0wFe"/>
+</div>
+<div class="flex gap-6">
+<button class="text-sm text-on-surface-variant hover:text-primary transition-colors" id="privacy-trigger">Privacy Policy</button>
+<a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="mailto:kyler@linchpinsystems.co">Contact</a>
+</div>
+</div>
+<div class="max-w-container-max mx-auto mt-4 text-center">
+<p class="text-sm text-on-surface-variant">&copy; 2026 Linchpin Systems. All rights reserved.</p>
+</div>
+</footer>
+</main>
+<!-- Privacy Policy Modal -->
+<div class="fixed inset-0 z-[100] items-center justify-center p-4 hidden" id="privacy-modal">
+<div class="absolute inset-0 bg-primary/40 backdrop-blur-sm" id="modal-overlay"></div>
+<div class="relative bg-surface-container-lowest rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-hidden flex flex-col">
+<div class="p-6 border-b border-surface-container-highest flex justify-between items-center shrink-0">
+<h3 class="font-headline-sm text-headline-sm text-primary">Privacy Policy</h3>
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors" id="close-modal">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-8 overflow-y-auto font-body-md text-body-md text-on-surface-variant space-y-6">
+<p class="font-bold text-primary text-lg">Linchpin Systems Privacy Policy</p>
+<p class=""></p><p class="" data-end="409" data-start="43">Linchpin Systems collects contact information, including phone numbers, provided voluntarily through business communications and direct contact with Kyler Quirk, operating as Linchpin Systems. This information is used solely to respond to inquiries, deliver contracted automation services, and communicate relevant service updates to clients and prospective clients.</p>
+<p class="" data-end="637" data-start="411">We do not sell, share, or distribute your personal information or SMS/text messaging opt-in data to any third parties under any circumstances, except as required to operate our texting service through our SMS service provider.</p>
+<p class="" data-end="1070" data-start="639">By calling a business phone number associated with Linchpin Systems or by providing your phone number directly to us, you consent to receive text messages related to your inquiry or service. Standard message and data rates may apply. Message frequency varies. To opt out of text message communications at any time, reply STOP to any message received. For help, reply HELP. Opting out will not affect any existing service agreement.</p>
+<p class=""></p>
+</div>
+</div>
+</div>
+<script>
+  // 1. Systems Toggle Interaction
+  const toggleBtn = document.getElementById('toggle-systems-btn');
+  const extraItems = document.getElementById('extra-items');
+  const btnText = document.getElementById('btn-text');
+  const btnIcon = document.getElementById('btn-icon');
+
+  if (toggleBtn && extraItems) {
+    toggleBtn.addEventListener('click', () => {
+      const isHidden = extraItems.classList.contains('hidden');
+      if (isHidden) {
+        extraItems.classList.remove('hidden');
+        btnText.textContent = 'Show Less';
+        if (btnIcon) btnIcon.style.transform = 'rotate(180deg)';
+      } else {
+        extraItems.classList.add('hidden');
+        btnText.textContent = 'Show All 13 Systems';
+        if (btnIcon) btnIcon.style.transform = 'rotate(0deg)';
+        document.getElementById('what-we-build')?.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
+  // 2. Video Player Interaction
+  const videoContainer = document.getElementById('video-placeholder-container');
+  if (videoContainer) {
+    videoContainer.addEventListener('click', function() {
+      const videoUrl = this.getAttribute('data-video-url');
+      // Convert shared URL to embed URL if needed
+      const embedUrl = videoUrl.replace('loom.com/share/', 'loom.com/embed/') + '?autoplay=1';
+      
+      this.innerHTML = `
+        <div class="relative w-full overflow-hidden rounded-xl shadow-ambient" style="padding-top: 56.25%;">
+          <iframe 
+            src="${embedUrl}" 
+            frameborder="0" 
+            webkitallowfullscreen 
+            mozallowfullscreen 
+            allowfullscreen 
+            allow="autoplay; fullscreen"
+            class="absolute top-0 left-0 w-full h-full"
+          ></iframe>
+        </div>
+      `;
+    });
+  }
+
+  // 3. Privacy Policy Modal Interaction
+  const modal = document.getElementById('privacy-modal');
+  const openBtn = document.getElementById('privacy-trigger');
+  const closeBtn = document.getElementById('close-modal');
+  const overlay = document.getElementById('modal-overlay');
+
+  const toggleModal = (show) => {
+    if (modal) {
+      modal.classList.toggle('hidden', !show);
+      modal.classList.toggle('flex', show);
+      document.body.style.overflow = show ? 'hidden' : '';
+    }
+  };
+
+  openBtn?.addEventListener('click', () => toggleModal(true));
+  closeBtn?.addEventListener('click', () => toggleModal(false));
+  overlay?.addEventListener('click', () => toggleModal(false));
+
+  // 4. Mobile Menu
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+
+  function closeMobileMenu() {
+    mobileMenu.classList.add('hidden');
+    mobileMenuIcon.textContent = 'menu';
+  }
+
+  mobileMenuBtn?.addEventListener('click', () => {
+    const isHidden = mobileMenu.classList.contains('hidden');
+    if (isHidden) {
+      mobileMenu.classList.remove('hidden');
+      mobileMenuIcon.textContent = 'close';
+    } else {
+      closeMobileMenu();
+    }
+  });
+
+  // Close mobile menu on outside click
+  document.addEventListener('click', (e) => {
+    if (!mobileMenuBtn?.contains(e.target) && !mobileMenu?.contains(e.target)) {
+      closeMobileMenu();
+    }
+  });
+</script>
+</body></html>
