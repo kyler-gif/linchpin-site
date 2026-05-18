@@ -638,19 +638,19 @@ video {
 }
 
 .mb-section-gap-md {
-  margin-bottom: 32px;
+  margin-bottom: 64px;
 }
 
 .mb-stack-lg {
-  margin-bottom: 13px;
+  margin-bottom: 26px;
 }
 
 .mb-stack-md {
-  margin-bottom: 6px;
+  margin-bottom: 13px;
 }
 
 .mb-stack-sm {
-  margin-bottom: 3px;
+  margin-bottom: 6px;
 }
 
 .mt-1 {
@@ -682,23 +682,23 @@ video {
 }
 
 .mt-gutter {
-  margin-top: 10px;
+  margin-top: 19px;
 }
 
 .mt-section-gap-md {
-  margin-top: 32px;
+  margin-top: 64px;
 }
 
 .mt-stack-lg {
-  margin-top: 13px;
+  margin-top: 26px;
 }
 
 .mt-stack-md {
-  margin-top: 6px;
+  margin-top: 13px;
 }
 
 .mt-stack-sm {
-  margin-top: 3px;
+  margin-top: 6px;
 }
 
 .flex {
@@ -873,15 +873,15 @@ video {
 }
 
 .gap-gutter {
-  gap: 10px;
+  gap: 19px;
 }
 
 .gap-stack-lg {
-  gap: 13px;
+  gap: 26px;
 }
 
 .gap-stack-md {
-  gap: 6px;
+  gap: 13px;
 }
 
 .space-y-3 > :not([hidden]) ~ :not([hidden]) {
@@ -1132,11 +1132,11 @@ video {
 }
 
 .p-stack-lg {
-  padding: 13px;
+  padding: 26px;
 }
 
 .p-stack-md {
-  padding: 6px;
+  padding: 13px;
 }
 
 .px-10 {
@@ -1205,8 +1205,8 @@ video {
 }
 
 .py-section-gap-lg {
-  padding-top: 48px;
-  padding-bottom:  48px;
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 
 .pb-4 {
@@ -1642,6 +1642,9 @@ video {
   .md\:flex {
     display: flex;
   }
+  .md\:inline-flex {
+    display: inline-flex;
+  }
 
   .md\:hidden {
     display: none;
@@ -1766,7 +1769,7 @@ video {
 <nav class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-sm transition-all border-b border-surface-container-highest">
 <div class="flex justify-between items-center h-20 px-margin-mobile md:px-gutter max-w-container-max mx-auto">
 <div class="flex items-center">
-<a class="flex items-center" href="#"><img alt="Linchpin Systems Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP3MuWGj5zwN95oO8IjDFeWvDXaK4PiasRHwnI92pDQdZ_2E8p6YF84WZawFnFJi1oqhbicALuNrPg18uHGoFXW8mOl93evq5oZwMCI85dOwxUrzxd6geu9PlRUNgBwxsT9gwiFmlghJAkQ1OarkyEk-UTckNcWatSPVFS8wsuLjMrwZPLjg1Twwrd7Pa8xWfXs5e2BzYqQOc3HDcI-vj2HLTs3rDzmszavMup-xNmVnWkhVDRJ3fSfN_Qu8e9C1fgssWh9MRc0wFe"/></a>
+<a class="flex items-center" href="#"><img alt="Linchpin Systems Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP3MuWGj5zwN95oO8IjDFeWvDXaK4PiasRHwnI92pDQdZ_2E8p6YF84WZawFnFJi1oqhbicALuNrPg18uHGoFXW8mOl93evq5oZwMCI85dOwxUrzxd6geu9PlRUNgBwxsT9gwiFmlghJAkQ1OarkyEk-UTckNcWatSPVFS8wsuLjMrwZPLjg1Twwrd7Pa8xWfXs5e2BzYqQOc3HDcI-vj2HLTs3rDzmszavMup-xNmVnWkhVDRJ3fSfN_Qu8e9C1fgssWh9MRc0wFe"/></a>
 </div>
 <div class="hidden md:flex items-center gap-gutter">
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#what-we-build">Systems</a>
@@ -1779,8 +1782,8 @@ video {
 <button class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-surface-container transition-colors" id="mobile-menu-btn" aria-label="Open menu">
 <span class="material-symbols-outlined text-primary" id="mobile-menu-icon">menu</span>
 </button>
-<a id="nav-btn-call" style="font-size:13px;padding:10px 16px;line-height:1;letter-spacing:0.03em;font-weight:600;border-radius:4px;display:none;vertical-align:middle;" class="bg-gradient-to-r from-accent-amber to-[#D97706] text-on-primary shadow-ambient hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap" href="https://calendly.com/linchpinsystems/15min" target="_blank">Schedule a Free Call</a>
-<a id="nav-btn-email" style="font-size:13px;padding:9px 16px;line-height:1;letter-spacing:0.03em;font-weight:600;border-radius:4px;border:1px solid #041627;display:none;vertical-align:middle;" class="text-primary hover:bg-surface-container transition-colors whitespace-nowrap" href="mailto:kyler@linchpinsystems.co">Email Us</a>
+<a style="font-size:13px;padding:10px 16px;line-height:1;letter-spacing:0.03em;font-weight:600;border-radius:4px;" class="hidden md:inline-flex items-center bg-gradient-to-r from-accent-amber to-[#D97706] text-on-primary shadow-ambient hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap" href="https://calendly.com/linchpinsystems/15min" target="_blank">Schedule a Free Call</a>
+<a style="font-size:13px;padding:9px 16px;line-height:1;letter-spacing:0.03em;font-weight:600;border-radius:4px;border:1px solid #041627;" class="hidden md:inline-flex items-center text-primary hover:bg-surface-container transition-colors whitespace-nowrap" href="mailto:kyler@linchpinsystems.co">Email Us</a>
 </div>
 </div>
 <!-- Mobile menu drawer -->
@@ -1791,8 +1794,9 @@ video {
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors px-4 py-3 rounded-lg" href="#about-linchpin" onclick="closeMobileMenu()">About</a>
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors px-4 py-3 rounded-lg" href="#faq" onclick="closeMobileMenu()">FAQ</a>
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors px-4 py-3 rounded-lg" href="#pricing" onclick="closeMobileMenu()">Pricing</a>
-<a style="font-size:13px;padding:10px 16px;line-height:1;letter-spacing:0.03em;font-weight:600;border-radius:4px;" class="bg-gradient-to-r from-accent-amber to-[#D97706] text-on-primary shadow-ambient hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap" href="https://calendly.com/linchpinsystems/15min" target="_blank" onclick="closeMobileMenu()">Schedule a Free Call</a>
-<a style="font-size:13px;padding:9px 16px;line-height:1;letter-spacing:0.03em;font-weight:600;border-radius:4px;border:1px solid #041627;" class="text-primary hover:bg-surface-container transition-colors whitespace-nowrap" href="mailto:kyler@linchpinsystems.co">Email Us</a>
+<div style="height:1px;background:#e4e2e3;margin:8px 0;"></div>
+<a style="font-size:15px;font-weight:600;letter-spacing:0.01em;padding:10px 16px;border-radius:6px;background:linear-gradient(to right,#F59E0B,#D97706);color:#fff;display:block;text-align:center;" href="https://calendly.com/linchpinsystems/15min" target="_blank" onclick="closeMobileMenu()">Schedule a Free Call</a>
+<a style="font-size:15px;font-weight:600;letter-spacing:0.01em;padding:9px 16px;border-radius:6px;border:1.5px solid #041627;color:#041627;display:block;text-align:center;" href="mailto:kyler@linchpinsystems.co" onclick="closeMobileMenu()">Email Us</a>
 </div>
 </div>
 </nav>
