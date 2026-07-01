@@ -1774,6 +1774,18 @@ video {
 }
 </style>
 
+<style>
+@media (min-width: 768px) {
+  #the-proof .text-body-md { font-size: 18px; line-height: 28px; }
+  #the-proof .font-body-sm { font-size: 16px; line-height: 25px; }
+  #the-proof .font-label-md.text-label-md { font-size: 17px; }
+  #pricing .text-body-md { font-size: 18px; line-height: 28px; }
+  #about-linchpin .text-body-md { font-size: 18px; line-height: 28px; }
+  #problem .text-body-md { font-size: 18px; line-height: 28px; }
+  #hero .text-body-lg { font-size: 19px; line-height: 29px; }
+  #the-proof h2.text-headline-md, #problem h2.text-headline-md { font-size: 52px; line-height: 60px; }
+}
+</style>
 </head>
 <body class="antialiased bg-surface-container-lowest">
 <!-- TopNavBar -->
@@ -1817,7 +1829,7 @@ video {
 </nav>
 <main class="pt-20">
 <!-- Hero Section -->
-<section class="bg-surface-container-lowest" style="padding-top:3rem;padding-bottom:3rem;">
+<section class="bg-surface-container-lowest" id="hero" style="padding-top:3rem;padding-bottom:3rem;">
 <div class="px-margin-mobile md:px-gutter max-w-container-max mx-auto flex flex-col md:flex-row items-center gap-stack-lg">
 <div class="md:w-1/2 flex flex-col gap-stack-md">
 <span class="font-label-md uppercase tracking-wider" style="color:#F59E0B;font-size:18px;">BUILT EXCLUSIVELY FOR HVAC</span>
@@ -1845,19 +1857,19 @@ video {
 <h2 class="font-headline-md text-headline-md md:font-headline-lg md:text-headline-lg text-primary mt-stack-sm">The problem isn't your service. It’s every opportunity that slips through the cracks while you’re delivering it.</h2>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter px-margin-mobile">
-<div class="bg-surface-container-lowest p-stack-lg rounded-xl shadow-ambient border border-error-container relative overflow-hidden group hover:shadow-ambient-hover transition-all">
-<div class="w-12 h-12 bg-error-container rounded-full flex items-center justify-center mb-stack-md">
+<div class="bg-surface-container-lowest rounded-xl border border-error-container/60 relative overflow-hidden transition-all" style="padding:24px;">
+<div class="w-10 h-10 bg-error-container rounded-full flex items-center justify-center mb-stack-md">
 <span class="material-symbols-outlined text-error-red">warning</span>
 </div>
-<h3 class="font-headline-sm text-headline-sm text-primary mb-stack-sm">The 2 PM Attic Crisis</h3>
+<h3 class="font-semibold text-primary mb-stack-sm" style="font-size:21px;line-height:28px;">The 2 PM Attic Crisis</h3>
 <p class="font-body-md text-body-md text-on-surface-variant">You're under a unit in a customer's attic at 2 PM on a Tuesday in July. Your phone rings. You can't answer. The homeowner has a broken air conditioner and it's 95 degrees outside. They hang up without leaving a message and immediately call the next contractor on their Google search results.</p>
 <p class="font-body-md text-body-md text-on-surface-variant mt-3">That scenario plays out dozens of times a month for the typical HVAC business. Meanwhile, a customer from last week hasn't left a Google review. An estimate you sent went unanswered. A maintenance contract is due for renewal and no one has followed up. None of this is happening because you don't care - it's happening because you're running a business and there aren't enough hours in the day.</p>
 </div>
-<div class="bg-surface-container-lowest p-stack-lg rounded-xl shadow-ambient border border-success-green/30 relative overflow-hidden group hover:shadow-ambient-hover transition-all">
-<div class="w-12 h-12 bg-success-green/20 rounded-full flex items-center justify-center mb-stack-md">
+<div class="bg-surface-container-lowest rounded-xl border border-success-green/25 relative overflow-hidden transition-all" style="padding:24px;">
+<div class="w-10 h-10 bg-success-green/20 rounded-full flex items-center justify-center mb-stack-md">
 <span class="material-symbols-outlined text-success-green">check_circle</span>
 </div>
-<h3 class="font-headline-sm text-headline-sm text-primary mb-stack-sm">The Linchpin Solution</h3>
+<h3 class="font-semibold text-primary mb-stack-sm" style="font-size:21px;line-height:28px;">The Linchpin Solution</h3>
 <p class="font-body-md text-body-md text-on-surface-variant">Linchpin catches the lead before they go cold. When a call is missed, the system texts the caller back in under a minute and asks what they need - AC, heating, or an emergency. That question does real work: it pulls the caller into a conversation and keeps them engaged with you instead of dialing the next company on Google while they wait. Their reply routes straight to you, so you call back already knowing the job instead of dialing blind. You get a priority callback alert, and if you run cloud-based scheduling software, every lead is logged straight into your CRM or FSM. Additionally, Linchpin offers other systems that keep the follow-up moving by chasing unsold estimates, collecting Google reviews, and handling the small touches that usually get buried when you’re running calls, crews, and customers all day.</p>
 </div>
 </div>
@@ -2139,7 +2151,7 @@ video {
 <div class="font-body-md text-body-md text-on-surface-variant space-y-4 mt-2 leading-relaxed">
 <p class="">My name is Kyler Quirk. I’m the founder of Linchpin Systems. I’m a veteran with a military intelligence background and a proud American. I was born and raised in a relatively rural part of Louisiana near Lafayette. In my years on active duty, I spent some time overseas in Germany, as well as back in the states around the Washington DC area.</p>
 <p class="">Being a natural systems thinker, I created Linchpin because I observed operational market-wide efficiency problems in the HVAC industry that I could address directly and provide tremendous value to by creating this company. What I noticed were things like great operators running excellent businesses and losing revenue not because of bad service, but because no one was there to follow up. The missed call at 2pm. The estimate that never got a response. The maintenance customer who renewed with someone else because nobody reached out first.</p>
-<p class="">I want to be clear that I understand this completely, and it isn’t anyone’s fault. We’re all only human, and when you’re running calls, crews, and customers all at once, there are only so many hours in a day. The follow-up is simply the first thing that falls off the plate. But here is the key realization:</p>
+<p class="">And that makes complete sense. When you’re running calls, crews, and customers all at once, there are only so many hours in a day, and the follow-up is simply the first thing that falls off the plate. But here is the key realization:</p>
 <p class="font-semibold text-primary py-2 border-l-4 border-accent-amber pl-4">That's not a people problem. It's a systems problem. And it has a fix.</p>
 <p class="">I built that fix specifically for HVAC because I respect what owner-operators have built: the trucks, the reputation, the years of hard work. My systems close those gaps for you automatically and give you back the revenue that was quietly walking out the door. You deserve a business that holds together on its own, even when you can’t be watching every part of it. A linchpin is the small part that holds everything else in place, and that is exactly the role these systems are built to play. I build them, I keep them running and maintain them, and I stand behind every one of them personally.</p>
 </div>
@@ -2238,9 +2250,9 @@ video {
 <section class="bg-surface-container-lowest px-margin-mobile md:px-gutter" id="pricing" style="padding-top:2.4rem;padding-bottom:2.4rem;">
 <div class="max-w-container-max mx-auto text-center mb-stack-md">
 <h2 class="font-headline-md text-headline-md md:font-headline-lg md:text-headline-lg text-primary">Straightforward pricing. No surprises.</h2>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto" style="margin-top:20px;">A single recovered job with our lead response system typically covers the monthly retainer entirely. The average HVAC business doing $1M in revenue already spends $2,500–$8,000 per month on marketing to generate inbound calls. Our lead response system makes sure that investment doesn’t go to waste the moment the phone rings while earning back what you would have lost and significantly more.</p>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl mx-auto" style="margin-top:20px;">A single recovered job with our lead response system typically covers the monthly retainer entirely. The average HVAC business doing $1M in revenue already spends $2,500–$8,000 per month on marketing to generate inbound calls. Our lead response system makes sure that investment doesn’t go to waste the moment the phone rings while earning back what you would have lost and significantly more.</p>
 </div>
-<div class="max-w-2-5xl md:max-w-2xl mx-auto mt-stack-md text-center">
+<div class="max-w-2-5xl md:max-w-3xl mx-auto mt-stack-md text-center">
 <p class="font-headline-sm text-primary mb-2" style="font-size:21px;line-height:28px;font-weight:600;">What you are actually paying for</p>
 <p class="font-body-md text-body-md text-on-surface-variant mb-4">A full-time office worker tasked with doing what these systems do would cost you bare minimum $40,000 a year, plus payroll, plus the risk they quit - and in almost all cases they would not complete the tasks nearly as completely, efficiently, or meticulously as the systems we build. Our systems complete the tasks for a fraction of that cost, never get lazy, never forget a follow-up, and work 24/7, including the nights and weekends when half of HVAC emergencies come in. And <span class="font-semibold text-primary">our systems are not AI</span> - they are pre-programmed actions that your shop will take when an occurrence triggers them (for example, when you miss a call or mark a job as complete in your FSM), without making decisions for you or misrepresenting you.</p>
 <p class="font-body-md text-body-md text-on-surface-variant">They’re also built for your shop specifically: the workflows, the connection to your scheduling software, the phone-carrier and compliance side, end-to-end testing, and the monthly monitoring that keeps it firing. Because Linchpin builds revenue-recovery systems for HVAC and nothing else, you get a finished, maintained system that a generalist could not match - and you touch none of it. The setup fee covers a build that keeps earning like a critical asset and building your business with a snowball-like effect long after the relatively small upfront investment is made. If you don’t have these systems already implemented into your operation, they’re usually no brainers for our clients. Note that this snowball-like effect applies especially when multiple systems are implemented simultaneously, but feel free to start with one.</p>
@@ -2299,14 +2311,14 @@ video {
 <h2 class="font-headline-md text-headline-md md:font-headline-lg md:text-headline-lg text-primary mt-stack-sm">Trusted by HVAC Professionals</h2>
 </div>
 <div class="grid grid-cols-1 gap-gutter">
-<div class="bg-surface-container-lowest p-8 rounded-xl shadow-ambient max-w-2xl mx-auto border border-surface-container-highest">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-ambient max-w-3xl mx-auto border border-surface-container-highest">
 <p class="font-body-lg text-body-lg text-on-surface mb-6 italic">"I was losing jobs every week just from missed calls - I didn’t even realize how many until I had something tracking it. The lead response system paid for itself in the first month."</p>
 <div class="mt-2">
 <p class="font-label-md text-label-md text-primary">Danny B.</p>
 <p class="font-body-sm text-on-surface-variant">Residential HVAC Owner, Louisiana</p>
 </div>
 </div>
-<div class="bg-surface-container-lowest p-8 rounded-xl shadow-ambient max-w-2xl mx-auto border border-surface-container-highest mt-gutter">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-ambient max-w-3xl mx-auto border border-surface-container-highest mt-gutter">
 <p class="font-body-lg text-body-lg text-on-surface mb-6 italic">"The estimate follow-up alone recovered jobs I had completely written off. My close rate went up without me doing anything different."</p>
 <div class="mt-2">
 <p class="font-label-md text-label-md text-primary">Travis O.</p>
